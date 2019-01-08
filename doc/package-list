@@ -1,0 +1,9 @@
+com.hackerrank.emailsystem
+com.hackerrank.emailsystem.configuration
+com.hackerrank.emailsystem.controller
+com.hackerrank.emailsystem.dao
+com.hackerrank.emailsystem.jms
+com.hackerrank.emailsystem.jobs
+com.hackerrank.emailsystem.model
+com.hackerrank.emailsystem.service
+test.com.hackerrank.emailsystem.service

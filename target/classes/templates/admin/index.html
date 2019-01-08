@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Admin Page</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link type="text/css" rel="stylesheet"
+	th:href="@{https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css}" />
+<script type="text/javascript"
+	src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript"
+	src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="container">
+
+		<form th:action="@{/logout}" method="get">
+			<button class="btn btn-md btn-danger btn-block" name="registration"
+				type="Submit">Logout</button>
+		</form>
+
+		<div class="panel-group" style="margin-top: 40px">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<span th:utext="${userName}"></span>
+				</div>
+				<div class="panel-body">
+					<table id="todotable" class="table table-striped">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Email</th>
+								<th>Sent Date</th>
+								<th>Subject</th>
+								<th>Body</th>
+								<th>Status</th>
+								<th>Fail Reason</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<p class="admin-message-text text-center" th:utext="${adminMessage}"></p>
+				<input type="hidden" th:value="${date}" id="filterDate" />
+			</div>
+		</div>
+
+	</div>
+	<script>
+    $(document).ready( function () {
+        var table = $('#todotable').DataTable({
+            'sAjaxSource': '/getAllEmailsByDate/'+$('#filterDate').val(),
+            'sAjaxDataProp': '',
+            'columns': [
+                { 'data': 'user.name'},
+                { 'data': 'email'},
+                { 'data': 'sentDate'},
+                { 'data': 'title'},
+                { 'data': 'body'},
+                { 'data': 'emailDeliveryStatus'},
+                { 'data': 'failReason'},
+            ]
+        })
+    });
+</script>
+</body>
+</html>
