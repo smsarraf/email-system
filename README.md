@@ -1,14 +1,14 @@
-##E-Mail System
+## E-Mail System
 System allows you to send Email to N-User on Periodically or based on Configure time with Status Update Jobs. 
 
-##System Info
+## System Info
 1. JDK 1.8 & Maven (3.3.9)
 1. Spring Boot 2.1.1.RELEASE
 1. BootStap (3.3.7) With DataTable (1.10.16) and JQuery(3.1.1)
 1. Active MQ (5.11.1)
 1. JUnit And Mokito
 
-##System Configurations (application.properties)
+## System Configurations (application.properties)
 1. SMTP Configurations
 2. Status Update Job Config Params
 3. Email Sender Job Params
@@ -69,11 +69,11 @@ System allows you to send Email to N-User on Periodically or based on Configure 
    spring.activemq.password=admin```
 
 ```
-##how to run
+## how to run
 1. mvn clean package
 1. Run Jar File As Java -jar email-system-0.0.1-SNAPSHOT.jar or mvn spring-boot:run
 
-##how to Use/Test
+## how to Use/Test
 1. Go To URL http://localhost:8080
 1. Click on Registration Link http://localhost:8080/registration and do registation
 1. Go Back to Login Page http://localhost:8080/login or click on Login Page
@@ -83,7 +83,7 @@ Username: admin@gmail.com
 Password: admin
 ```
 
-##Documents
+## Documents
 1. UX Document : EMailSystemUX.pdf
 1. Java Doc {application_folder}/doc/index.html
 
